@@ -12,26 +12,22 @@
 		<div class="header-wrapper">
 			<div class="topnav" id="myTopnav">
 				<div>
-					<a href="https://haphosm.github.io/">
+					<a tabindex="1" href="https://haphosm.github.io/">
 						<img src="favicon.ico" class="header-image left-align">
+						<span class="terminal">C:/ Hapho</span>
 					</a>
-					<span class="terminal">C:/ Hapho</span>
 				</div>
-				<input class="checkbox" type="checkbox" name="" id="" />
-				<div class="hamburger">
-					<span class="line line1"></span>
-					<span class="line line2"></span>
-					<span class="line line3"></span>
-				</div>  
+				<input class="checkbox" type="checkbox" name="" id="checkbox" />
+				<label class="hamburger" for="checkbox"><span class="line"></span></label>
 				<div style="float:right" >
 					<ul>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-						<li><a href="#news">News</a></li>
-						<li><a class="active" href="#home">Home</a></li>
+						<li tabindex="5"><a href="#about">About</a></li>
+						<li tabindex="4"><a href="#contact">Contact</a></li>
+						<li tabindex="3"><a href="#news">News</a></li>
+						<li tabindex="2"><a class="active" href="#home">Home</a></li>
 						
 					</ul>
-					<a href="javascript:void(0);" class="hamburger" onclick="myFunction()">
+					<a href="javascript:void(0);" class="" onclick="myFunction()">
 						<i class="fa fa-bars"></i>
 					</a>
 				</div>

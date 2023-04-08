@@ -1,5 +1,6 @@
 :root {
 	--margin-size: max(500px, 25vw);
+	--default-color:  #cee2ea;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -30,6 +31,7 @@ body {
 	width: auto;
 	padding: none;
 	margin: none;
+	color: var(--default-color);
 }
 
 .topnav {
@@ -77,11 +79,10 @@ body {
 }
 
 /* Hide the link that should open and close the topnav on small screens */
-.topnav .hamburger {
+.hamburger {
 	display: block;
 	height: 26px;
 	width: 32px;
-	position: absolute;
 	top: 17px;
 	left: 20px;
 	z-index: 2;
@@ -92,54 +93,65 @@ body {
 }
 
 .topnav .checkbox {
-	position: absolute;
-	display: block;
+	display: relative;
 	height: 32px;
 	width: 32px;
-	top: 20px;
-	left: 20px;
+	top: 5px;
+	left: 15px;
 	z-index: 5;
 	opacity: 0;
 	cursor: pointer;
 }
 
 .topnav .hamburger .line {
-display: block;
-height: 4px;
-width: 100%;
-border-radius: 10px;
-background: #0e2431;
+	background: #f8f8ff;
+	display: block;
+	height: 4px;
+	width: 2rem;
+	border-radius: 10px;
+	background: white;
+	position: relative;
 }
 
-.topnav .hamburger .line1 {
-	transform-origin: 0% 0%;
-	transition: transform 0.4s ease-in-out;
+.line::before,.line::after {
+    background: #f8f8ff;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.4s ease-out;
+    width: 100%;
+	border-radius: 10px;
+	height: 4px;
 }
 
-.topnav .hamburger .line2 {
-	transition: transform 0.2s ease-in-out;
+.hamburger .line::after {
+	top:5px;
 }
 
-.topnav .hamburger .line3 {
-	transform-origin: 0% 100%;
-	transition: transform 0.4s ease-in-out;
+.hamburger .line::before {
+	top: -5px;
 }
 
 
   
-.topnav input[type="checkbox"]:checked ~ .hamburger .line1 {
-	transform: rotate(45deg);
+.topnav input#checkbox:checked ~ .hamburger.line::after {
+	transform: rotate(45deg) translate(7px, 6px);
+	top:0;
+	
 }
   
-.topnav input[type="checkbox"]:checked ~ .hamburger .line2 {
+.topnav input#checkbox:checked ~ .hamburger.line {
 	transform: scaleY(0);
+	display: none;
 }
   
-.topnav input[type="checkbox"]:checked ~ .hamburger .line3 {
-	transform: rotate(-45deg);
+.topnav input#checkbox:checked ~ .hamburger.line::before {
+	 transform: rotate(-45deg) translate(7px, -6px);
+	top:0;
 }
   
-.topnav input[type="checkbox"]:checked ~ .header-image{
+.topnav input#checkbox:checked ~ .header-image{
 	display: none;
 }
 
